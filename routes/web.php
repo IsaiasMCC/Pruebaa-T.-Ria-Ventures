@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return redirect()->route('ejecutives.index');
+    return redirect()->route('ejecutivos.index');
 });
 
 // Route::resource('ejecutivos', ExecutiveController::class);

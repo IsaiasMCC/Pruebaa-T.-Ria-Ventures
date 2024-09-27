@@ -94,20 +94,10 @@ class ExecutiveController extends Controller
             'state' => 'required',
         ]);
 
-        $image = $request->file('photo');
-        dd($image);
-        if(  isset($image) ) {
-            $imagePath = $image->store('public/images');
-            $imageName = basename($imagePath);
-        } else {
-            $imageName = null;
-        }
-
         $executive = Executive::find($request->idModalEdit);
         $executive->update([
             'name' => $request->name,
             'lastname' => $request->lastname,
-            'photo' =>  !isset($imageName)  ?  $imageName : $executive->photo,
             'phone' => $request->phone,
             'address' => $request->address,
             'position' => $request->position,
